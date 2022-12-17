@@ -28,11 +28,22 @@ export class ProductList{
 
     render(){
         return `<h2>ProductList</h2>
+        <div style="display:flex;
+        flex-wrap: wrap;">
         ${this.products.map((product)=> new ProductItem(product))
             .map((product:ProductItem)=> product.render())
             .join("")}
-            ${this.loading ? `<p>Loading</p>`:``}
+            </div>
+            <div>
+            ${this.loading ? `<div class="text-center">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>`:``}
+          </div>
+          <div>
             ${this.err ? `<p>${this.err.message}</p>`:``}
+            </div>
 
         `
     }
