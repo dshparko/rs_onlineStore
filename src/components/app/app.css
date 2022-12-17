@@ -1,14 +1,12 @@
-.filterWrapper{
+.filterWrapper {
   display: flex;
   border: 0.1rem rgb(161, 21, 21) solid;
 }
 
-.productWrapper{
+.productWrapper {
   border: 0.1rem rgb(161, 21, 21) solid;
 }
 
-.filterWrapper{
+.filterWrapper {
   flex-direction: column;
 }
-
-

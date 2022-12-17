@@ -5,8 +5,11 @@ import { price } from '../HTML/Filter/Price/price';
 import { stock } from '../HTML/Filter/Stock/stock';
 import { filterPanel } from '../HTML/Product/FilterPanel/filterPanel';
 import './app.css';
-
+import { ProductList } from '../ProductsList';
 export class App {
+  private productList = new ProductList();
+
+  
   render() {
     return `
     <div class='filterWrapper'>
@@ -18,6 +21,7 @@ export class App {
     </div>
     <div class ='productWrapper'>
     ${filterPanel}
+    ${this.productList.render()}
     </div>`
   }
 }
