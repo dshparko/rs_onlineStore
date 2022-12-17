@@ -2,6 +2,7 @@ export * from '../src/'
 import './global.css';
 
 import {App} from './components/app';
+import { store } from './Store/Store';
 
 const main = document.querySelector('.main');
 
@@ -13,4 +14,8 @@ const app = new App();
 
 main.innerHTML = app.render();
 
-console.log(app)
+store.$render.subscribe(()=>{
+  main.innerHTML = app.render();
+});
+
+//console.log(app)
