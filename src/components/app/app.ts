@@ -6,12 +6,17 @@ import { stock } from '../HTML/Filter/Stock/stock';
 import { filterPanel } from '../HTML/Product/FilterPanel/filterPanel';
 import './app.css';
 import { ProductList } from '../ProductsList';
-export class App {
+import { appComponents } from '../../Interfaces/appComponents';
+import { addEventButtons } from '../Cart/ProductButton/ProductButtons';
+
+
+export class App implements appComponents{
   private productList = new ProductList();
 
-  
+ 
   render() {
     return `
+  
     <div class='filterWrapper'>
       ${filterButtons}
       ${category}
@@ -22,6 +27,12 @@ export class App {
     <div class ='productWrapper'>
     ${filterPanel}
     ${this.productList.render()}
+    
     </div>`
   }
+  addEvents(){
+    
+  }
 }
+
+addEventButtons()

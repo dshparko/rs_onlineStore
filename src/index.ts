@@ -10,7 +10,7 @@ if (!main) {
   throw new Error('The main is undefined!');
 }
 
-const app = new App();
+const app = new App ();
 
 main.innerHTML = app.render();
 

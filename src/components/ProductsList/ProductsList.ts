@@ -1,13 +1,15 @@
+import { appComponents } from "../../Interfaces/appComponents";
 import { Product } from "../../Interfaces/Product";
 import { productModel } from "../../Models/ProductsModel";
 import { store } from "../../Store/Store";
 import { ProductItem } from "../ProductItem"
 
-export class ProductList{
+export class ProductList implements appComponents{
 
     private loading = false;
     private err : Error| null = null;
     private products:Product[]=[];
+    
     constructor(){
         this.fetchProducts();
     }
@@ -46,5 +48,8 @@ export class ProductList{
             </div>
 
         `
+    }
+    addEvents () {
+        
     }
 }

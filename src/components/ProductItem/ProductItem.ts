@@ -1,10 +1,13 @@
+import { appComponents } from "../../Interfaces/appComponents";
 import { Product } from "../../Interfaces/Product";
 
-export class ProductItem{
+export class ProductItem implements appComponents{
 
 constructor(private product:Product){
 
 }
+
+getId = () => `${this.product.id}`
 
 render() {
     return `
@@ -13,13 +16,21 @@ render() {
         <div class="card-body">
           <h5 class="card-title">${this.product.name}</h5>
           <p class="card-text">$${this.product.price}</p>
-            <a href="#" class="btn btn-primary">BUY</a>
+            <a href="#" class="btn_add btn btn-primary" id=${this.getId()}>BUY</a>
         </div>
       </div>
     `;
   }
 
-  addEvents() {
-    
+addEvents() {
+    const buttonItems = document.getElementById(this.getId())
+    if(buttonItems == null){
+      throw new Error("!!!");
+      
+    } else{
+      buttonItems.addEventListener('click', () => {
+        console.log(buttonItems)
+      })
+    }
     };
 }
