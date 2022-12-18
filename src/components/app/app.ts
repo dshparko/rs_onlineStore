@@ -36,3 +36,8 @@ export class App implements appComponents{
 }
 
 addEventButtons()
+
+// setInterval(function() {
+//   const totalPrice = document.querySelectorAll('p.card-text')
+//   console.log( totalPrice)
+// }, 1000);

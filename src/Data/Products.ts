@@ -43,7 +43,7 @@ const PRODUCTS: Product[] = [
 
   {
     favorite: false,
-    id: 'product_5',
+    id: 'product_6',
     image: 'https://i.pinimg.com/564x/e3/aa/99/e3aa99152428ad7bca8ffbe0e330803d.jpg',
     name: 'product 5',
     price: 1499,
