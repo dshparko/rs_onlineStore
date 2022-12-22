@@ -21,5 +21,5 @@ store.$state.subscribe(()=>{
 
 window.addEventListener('hashchange', ()=>{
   main.innerHTML = app.render();
+  app.addEvents()
 })
-//console.log(app)
