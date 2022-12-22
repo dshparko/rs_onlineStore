@@ -6,45 +6,50 @@ export let category = `<div class='categoryWrapper'>
 <div class='categoryItem'>
 <form>
   <input type="checkbox">
-  <label>Jackets</label>
+  <label>Afternoon dress</label>
 </form>
 <p class='productAvailability'>(x/x)</p>
 </div>
 <div class='categoryItem'>
 <form>
   <input type="checkbox">
-  <label>xxx</label>
-</form>
-<p class='productAvailability'>(x/x)</p>
-</div>
-<div class='categoryItem'>
-<form>
-  <input type="checkbox">
-  <label>xxx</label>
+  <label>Mourning wear</label>
 </form><p class='productAvailability'>(x/x)</p>
 </div>
 <div class='categoryItem'>
 <form>
   <input type="checkbox">
-  <label>xxx</label>
+  <label>Sleep wear</label>
 </form><p class='productAvailability'>(x/x)</p>
 </div>
 <div class='categoryItem'>
 <form>
   <input type="checkbox">
-  <label>xxx</label>
+  <label>Shirts and blouses</label>
 </form><p class='productAvailability'>(x/x)</p>
 </div>
 <div class='categoryItem'>
 <form>
   <input type="checkbox">
-  <label>xxx</label>
+  <label>Knit wear</label>
 </form><p class='productAvailability'>(x/x)</p>
 </div>
 <div class='categoryItem'>
 <form>
   <input type="checkbox">
-  <label>xxx</label>
+  <label>Undergarments</label>
+</form><p class='productAvailability'>(x/x)</p>
+</div>
+<div class='categoryItem'>
+<form>
+  <input type="checkbox">
+  <label>Evening wear</label>
+</form><p class='productAvailability'>(x/x)</p>
+</div>
+<div class='categoryItem'>
+<form>
+  <input type="checkbox">
+  <label>Casual wear</label>
 </form><p class='productAvailability'>(x/x)</p>
 </div>
 </div>

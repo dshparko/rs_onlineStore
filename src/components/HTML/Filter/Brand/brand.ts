@@ -7,49 +7,49 @@ export let brand = `
     <div class='brandItem'>
     <form>
   <input type="checkbox">
-  <label>xxx</label>
+  <label>Louis Vuitton</label>
 </form>    
 <p class='productAvailability'>(x/x)</p>
     </div>
     <div class='brandItem'>
     <form>
   <input type="checkbox">
-  <label>xxx</label>
+  <label>GUCCI</label>
 </form>    
 <p class='productAvailability'>(x/x)</p>
     </div>
     <div class='brandItem'>
     <form>
   <input type="checkbox">
-  <label>xxx</label>
+  <label>Chanel</label>
 </form>    
 <p class='productAvailability'>(x/x)</p>
     </div>
     <div class='brandItem'>
     <form>
   <input type="checkbox">
-  <label>xxx</label>
+  <label>ZARA</label>
 </form>    
 <p class='productAvailability'>(x/x)</p>
     </div>
     <div class='brandItem'>
     <form>
   <input type="checkbox">
-  <label>xxx</label>
+  <label>H&M</label>
 </form>    
 <p class='productAvailability'>(x/x)</p>
     </div>
     <div class='brandItem'>
     <form>
   <input type="checkbox">
-  <label>xxx</label>
+  <label>Puma</label>
 </form>    
 <p class='productAvailability'>(x/x)</p>
     </div>
     <div class='brandItem'>
     <form>
   <input type="checkbox">
-  <label>xxx</label>
+  <label>Victoria's Secret</label>
 </form>    
 <p class='productAvailability'>(x/x)</p>
     </div>
