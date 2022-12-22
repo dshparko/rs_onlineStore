@@ -7,14 +7,22 @@ import { filterPanel } from '../HTML/Product/FilterPanel/filterPanel';
 import './app.css';
 import { ProductList } from '../ProductsList';
 import { appComponents } from '../../Interfaces/appComponents';
-import { addEventButtons } from '../Cart/ProductButton/ProductButtons';
+import { cart } from '../ProductItem';
 
 
 export class App implements appComponents{
   private productList = new ProductList();
-
  
   render() {
+    if(location.hash == '#cart'){
+      return `
+      <div class='cart'>
+      <div class='cartProduct'>${cart.join('')}</div>
+
+      </div>
+     `
+  
+    } else {
     return `
   
     <div class='filterWrapper'>
@@ -26,18 +34,14 @@ export class App implements appComponents{
     </div>
     <div class ='productWrapper'>
     ${filterPanel}
+
     ${this.productList.render()}
     
     </div>`
   }
-  addEvents(){
-    
   }
+  addEvents(){
+    this.productList.addEvents()
+  }
+
 }
-
-addEventButtons()
-
-// setInterval(function() {
-//   const totalPrice = document.querySelectorAll('p.card-text')
-//   console.log( totalPrice)
-// }, 1000);

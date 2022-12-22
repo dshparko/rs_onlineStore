@@ -38,8 +38,13 @@ font-family: 'Courgette', cursive;
   color: rgb(161, 21, 21);
 }
 
+.cartLink{
+  text-decoration: none;
+}
+
 .material-symbols-outlined{
   font-size: 3rem;
+  
 }
 
 .main{

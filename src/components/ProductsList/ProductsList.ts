@@ -7,34 +7,42 @@ import { ProductItem } from "../ProductItem"
 export class ProductList implements appComponents{
 
     private loading = false;
-    private err : Error| null = null;
+    private error : Error| null = null;
     private products:Product[]=[];
+    private productsComponents: ProductItem[] = [];
     
     constructor(){
         this.fetchProducts();
+
+      
+        store.$state.subscribe(({ products }) => {
+            this.products = products;
+            this.productsComponents = this.products.map((product) => new ProductItem(product));
+            if (products.length) {
+              this.loading = false;
+              this.error = null;
+            }
+          });
+    
+            
+         
     }
 
-    fetchProducts(){
+    fetchProducts() {
         this.loading = true;
-        productModel.getProducts()
-        .then((products)=>{
-            this.products=products;
-        }).catch((err)=>{
-            this.err = err;
-        })
-        .finally(()=>{
-            store.$render.next(true);
+        store.update();
+        productModel.getProducts().catch((error) => {
+          this.error = error;
+          this.loading = false;
         });
-    }
+      }
 
 
     render(){
         return `<h2>ProductList</h2>
         <div style="display:flex;
         flex-wrap: wrap;">
-        ${this.products.map((product)=> new ProductItem(product))
-            .map((product:ProductItem)=> product.render())
-            .join("")}
+        ${this.productsComponents.map((product) => product.render()).join('')}
             </div>
             <div>
             ${this.loading ? `<div class="text-center">
@@ -44,12 +52,12 @@ export class ProductList implements appComponents{
           </div>`:``}
           </div>
           <div>
-            ${this.err ? `<p>${this.err.message}</p>`:``}
+            ${this.error ? `<p>${this.error.message}</p>`:``}
             </div>
 
         `
     }
     addEvents () {
-        
+        this.productsComponents.forEach((component) => component.addEvents());
     }
 }

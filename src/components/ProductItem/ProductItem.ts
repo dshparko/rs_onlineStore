@@ -1,7 +1,12 @@
 import { appComponents } from "../../Interfaces/appComponents";
 import { Product } from "../../Interfaces/Product";
+// import { cartModel } from "../../Models/CartModel";
 import './ProductItem.css'
 
+export let cart: String[] = []
+const productCounter = document.querySelector('.productCounter')
+const total = document.querySelector('.total')
+let amount = 0
 export class ProductItem implements appComponents{
 
 constructor(private product:Product){
@@ -24,13 +29,39 @@ render() {
   }
 
 addEvents() {
-    const buttonItems = document.getElementById(this.getId())
-    if(buttonItems == null){
+    const buttonItem = document.getElementById(this.getId())
+    if(buttonItem == null){
       throw new Error("!!!");
-      
     } else{
-      buttonItems.addEventListener('click', () => {
-        console.log(buttonItems)
+      buttonItem.addEventListener('click', () => {
+        if(buttonItem.classList.contains('btn_delete')){
+          buttonItem.classList.remove('btn_delete')
+          buttonItem!.innerHTML = 'BUY'
+          cart = cart.filter(product => !product.match(this.product.image))
+          productCounter!.innerHTML = String(cart.length)
+            amount -= this.product.price
+            total!.innerHTML = String(amount)
+        }else{
+          buttonItem.classList.add('btn_delete')
+            buttonItem!.innerHTML = 'DROP FROM CART'
+            cart.push(`<div class="${this.product.name} card mb-3" style="max-width: 540px; display: flex;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="${this.product.image}" class="img-fluid rounded-start" style="max-width: 3rem;" alt="${this.product.name}">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">${this.product.name}</h5>
+                  <h6 class="card-title">$${this.product.price}</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        `)
+            productCounter!.innerHTML = String(cart.length)
+            amount += this.product.price
+            total!.innerHTML = String(amount)
+        }
       })
     }
     };

@@ -14,8 +14,12 @@ const app = new App ();
 
 main.innerHTML = app.render();
 
-store.$render.subscribe(()=>{
+store.$state.subscribe(()=>{
   main.innerHTML = app.render();
+  app.addEvents()
 });
 
+window.addEventListener('hashchange', ()=>{
+  main.innerHTML = app.render();
+})
 //console.log(app)
