@@ -1,6 +1,6 @@
 import './filterPanel.css'
 
-export let filterPanel = `
+export const filterPanel = `
 <div class ='filterPanel'>
     <div class=''>Sort Options</div>
     <p class='found'>Found: 99</p>
