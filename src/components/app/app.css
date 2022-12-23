@@ -17,8 +17,9 @@
   object-fit: cover;
 }
 
-.cartProduct{
+.cartProduct {
   display: flex;
-    border: 0.1rem rgb(161, 21, 21) solid;
-    flex-direction: column;
+  border: 0.1rem rgb(161, 21, 21) solid;
+  flex-direction: column;
+  padding: 1rem;
 }

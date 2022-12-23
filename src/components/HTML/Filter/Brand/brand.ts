@@ -1,6 +1,6 @@
-import './brand.css'
+import "./brand.css";
 
-export let brand = `
+export const brand = `
 <div class='brandWrapper'>
       <p class='brandTitle'>Brand</p>
       <div class='brandCheckbox'>
@@ -55,4 +55,4 @@ export let brand = `
     </div>
       </div>
       </div>
-`
+`;

@@ -1,6 +1,6 @@
-import './category.css';
+import './category.css'
 
-export let category = `<div class='categoryWrapper'>
+export const category = `<div class='categoryWrapper'>
 <p class='categoryTitle'>Category</p>
 <div class='categoryCheckbox'>
 <div class='categoryItem'>

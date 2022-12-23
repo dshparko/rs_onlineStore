@@ -1,7 +1,7 @@
-.card-text::before{
-  content: '$';
+.card-text::before {
+  content: "$";
 }
 
-.stock{
+.stock {
   display: flex;
 }

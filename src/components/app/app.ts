@@ -1,29 +1,31 @@
-import { brand } from '../HTML/Filter/Brand/brand';
-import { category } from '../HTML/Filter/Category/category';
-import { filterButtons } from '../HTML/Filter/FilterButtons/filterButtons';
-import { price } from '../HTML/Filter/Price/price';
-import { stock } from '../HTML/Filter/Stock/stock';
-import { filterPanel } from '../HTML/Product/FilterPanel/filterPanel';
-import './app.css';
-import { ProductList } from '../ProductsList';
-import { appComponents } from '../../Interfaces/appComponents';
-import { cart } from '../ProductItem';
+import { brand } from "../HTML/Filter/Brand/brand";
+import { category } from "../HTML/Filter/Category/category";
+import { filterButtons } from "../HTML/Filter/FilterButtons/filterButtons";
+import { price } from "../HTML/Filter/Price/price";
+import { stock } from "../HTML/Filter/Stock/stock";
+import { filterPanel } from "../HTML/Product/FilterPanel/filterPanel";
+import "./app.css";
+import { ProductList } from "../ProductsList";
+import { appComponents } from "../../Interfaces/appComponents";
+import { cart } from "../ProductItem";
 
-
-export class App implements appComponents{
+export class App implements appComponents {
   private productList = new ProductList();
- 
+
   render() {
-    if(location.hash == '#cart'){
-      return `
+    if (location.hash == "#cart") {
+      if (cart.length == 0) {
+        return `<div>Cart is Empty</div>`;
+      } else {
+        return `
       <div class='cart'>
-      <div class='cartProduct'>${cart.join('')}</div>
+      <div class='cartProduct'>${cart.join("")}</div>
 
       </div>
-     `
-     
+     `;
+      }
     } else {
-    return `
+      return `
   
     <div class='filterWrapper'>
       ${filterButtons}
@@ -37,11 +39,10 @@ export class App implements appComponents{
 
     ${this.productList.render()}
     
-    </div>`
+    </div>`;
+    }
   }
+  addEvents() {
+    this.productList.addEvents();
   }
-  addEvents(){
-    this.productList.addEvents()
-  }
-
 }

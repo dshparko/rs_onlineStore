@@ -1,4 +1,4 @@
-export interface appComponents{
+export interface appComponents {
   render: () => string;
-  addEvents: () => void
+  addEvents: () => void;
 }
