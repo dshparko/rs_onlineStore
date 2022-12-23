@@ -4,5 +4,8 @@ export interface Product{
     image: string;
     price: number;
     favorite: boolean;
-    stock: number,
+    stock: number;
+    description: string;
+    category: string;
+    discount: number
 }

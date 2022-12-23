@@ -113,6 +113,8 @@ addEvents() {
 headerLink?.addEventListener('click', ()=>{
   cart.length = 0
   amount = 0
+  total!.innerHTML = String(amount)
+  productCounter!.innerHTML = String(amount)
 })
 
 

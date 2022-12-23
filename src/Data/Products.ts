@@ -8,6 +8,9 @@ const PRODUCTS: Product[] = [
     name: 'product 0',
     price: 1113,
     stock: 12,
+    description: 'blablabla',
+    category: 'dress',
+    discount: 14,
   },
 
   {
@@ -17,6 +20,9 @@ const PRODUCTS: Product[] = [
     name: 'product 1',
     price: 2122,
     stock: 10,
+    description: 'blablabla',
+    category: 'dress',
+    discount: 11,
   },
 
   {
@@ -26,6 +32,9 @@ const PRODUCTS: Product[] = [
     name: 'product 2',
     price: 311,
     stock: 20,
+    description: 'blablabla',
+    category: 'dress',
+    discount: 12,
   },
 
   {
@@ -35,6 +44,9 @@ const PRODUCTS: Product[] = [
     name: 'product 3',
     price: 399,
     stock: 24,
+    description: 'blablabla',
+    category: 'dress',
+    discount: 15,
   },
 
   {
@@ -44,6 +56,9 @@ const PRODUCTS: Product[] = [
     name: 'product 4',
     price: 599,
     stock: 11,
+    description: 'blablabla',
+    category: 'dress',
+    discount: 9,
   },
 
   {
@@ -53,6 +68,9 @@ const PRODUCTS: Product[] = [
     name: 'product 5',
     price: 1499,
     stock: 15,
+    description: 'blablabla',
+    category: 'dress',
+    discount: 17,
   },
 ];
 
