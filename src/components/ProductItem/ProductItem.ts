@@ -4,8 +4,7 @@ import './ProductItem.css'
 
 export let cart: String[] = []
 const productCounter = document.querySelector('.productCounter')
-const stockMinus = document.querySelector('.stockMinus')
-
+const headerLink = document.querySelector('.header__link')
 
 
 const total = document.querySelector('.total')
@@ -77,7 +76,7 @@ addEvents() {
                   
                   ">+</button>
                   <div id='${'stockCounter'+this.getId()}'>1</div>
-                  <button id='${stockMinus+this.getId()}'
+                  <button 
                   onclick="
                   const stockCounter = document.getElementById('${'stockCounter'+this.getId()}')
                   const total = document.querySelector('.total')
@@ -111,5 +110,9 @@ addEvents() {
 }
 }
 
+headerLink?.addEventListener('click', ()=>{
+  cart.length = 0
+  amount = 0
+})
 
 
