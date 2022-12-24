@@ -1,21 +1,25 @@
-export * from '../src/'
-import './global.css';
+export * from "../src/";
+import "./global.css";
 
-import {App} from './components/app';
-import { store } from './Store/Store';
+import { App } from "./components/app";
+import { store } from "./Store/Store";
 
-const main = document.querySelector('.main');
+const main = document.querySelector(".main");
 
 if (!main) {
-  throw new Error('The main is undefined!');
+  throw new Error("The main is undefined!");
 }
 
 const app = new App();
 
 main.innerHTML = app.render();
 
-store.$render.subscribe(()=>{
+store.$state.subscribe(() => {
   main.innerHTML = app.render();
+  app.addEvents();
 });
 
-//console.log(app)
+window.addEventListener("hashchange", () => {
+  main.innerHTML = app.render();
+  app.addEvents();
+});

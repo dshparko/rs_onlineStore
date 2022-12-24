@@ -1,10 +1,10 @@
-.priceWrapper{
+.priceWrapper {
   padding: 0.3rem;
   margin: 0.25rem;
   border: 0.1rem rgb(161, 21, 21) solid;
   border-radius: 0.6rem;
 }
 
-.priceTitle{
+.priceTitle {
   text-align: center;
 }

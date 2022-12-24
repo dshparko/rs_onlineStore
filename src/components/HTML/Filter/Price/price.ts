@@ -1,6 +1,6 @@
 import './price.css'
 
-export let price = `<div class='priceWrapper'>
+export const price = `<div class='priceWrapper'>
 <p class='priceTitle'>Prise</p>
 <div class='priseCheckbox'>
 <input type="range" multiple>

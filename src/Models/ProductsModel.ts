@@ -1,24 +1,29 @@
 import { Product } from "../Interfaces/Product";
 import { getProducts } from "../Data/Products";
-export class ProductModel{
-    static isExist =false;
-    static instance: ProductModel;
 
-    constructor(){
-        if(ProductModel.isExist){
+import { store } from "../Store/Store";
 
-            return ProductModel.instance;
-        }
+export class ProductsModel {
+  static isExist = false;
+  static instance: ProductsModel;
 
-        ProductModel.isExist= true;
-
-        ProductModel.instance = this;
+  constructor() {
+    if (ProductsModel.isExist) {
+      return ProductsModel.instance;
     }
 
-    getProducts():Promise<Product[]>{
-        return getProducts();
-    }
+    ProductsModel.isExist = true;
+    ProductsModel.instance = this;
+  }
 
+  getProducts(): Promise<Product[]> {
+    return getProducts().then((products) => {
+      store.update({
+        products,
+      });
+      return products;
+    });
+  }
 }
 
-export const productModel = new ProductModel;
+export const productModel = new ProductsModel();

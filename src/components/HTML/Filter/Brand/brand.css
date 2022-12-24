@@ -5,11 +5,11 @@
   border-radius: 0.6rem;
 }
 
- .brandTitle{
+.brandTitle {
   text-align: center;
 }
 
-.brandItem{
+.brandItem {
   display: flex;
   justify-content: space-between;
 }

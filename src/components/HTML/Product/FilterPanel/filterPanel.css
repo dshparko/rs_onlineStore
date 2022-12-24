@@ -1,14 +1,13 @@
-.filterPanel{
+.filterPanel {
   display: flex;
   justify-content: space-between;
   border: 0.1rem rgb(161, 21, 21) solid;
-
 }
 
-.search_input{
+.search_input {
   height: 2rem;
 }
 
-.sizeIcon{
+.sizeIcon {
   display: flex;
 }
