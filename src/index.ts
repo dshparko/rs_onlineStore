@@ -4,11 +4,12 @@ import "./global.css";
 import { App } from "./components/app";
 import { store } from "./Store/Store";
 
-const main = document.querySelector(".main");
+const main = document.querySelector(".main") as HTMLElement;
 
 if (!main) {
   throw new Error("The main is undefined!");
 }
+
 
 const app = new App();
 
@@ -22,4 +23,10 @@ store.$state.subscribe(() => {
 window.addEventListener("hashchange", () => {
   main.innerHTML = app.render();
   app.addEvents();
+
+  if (location.hash == "#cart"){
+    main.style.display = 'inline'
+  } else{
+    main.style.display = 'grid'
+  }
 });

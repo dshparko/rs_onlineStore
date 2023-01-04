@@ -7,7 +7,7 @@ import { filterPanel } from "../HTML/Product/FilterPanel/filterPanel";
 import "./app.css";
 import { ProductList } from "../ProductsList";
 import { appComponents } from "../../Interfaces/appComponents";
-import { cart } from "../ProductItem";
+import { cart, productCounter, total } from "../ProductItem";
 
 export class App implements appComponents {
   private productList = new ProductList();
@@ -20,7 +20,19 @@ export class App implements appComponents {
         return `
       <div class='cart'>
       <div class='cartProduct'>${cart.join("")}</div>
-
+<div class='summary'>
+<p class='summaryTitel'>Summary</p>
+<p class='summaruProducts'>${productCounter?.innerHTML}</p>
+<p class='summaryTotal'>${total?.innerHTML}</p>
+<p class='summaryPromoTotal'>${Number(total?.innerHTML) * 1 / 100}</p>
+<input class='summaryPromo' type="text" placeholder='Enter promo code' value=''>
+<div class ='promoWrapper'>
+<p>haluava - 99%</p>
+<button class='promoButton'>ADD</button>
+</div>
+<p>Promo for test: 'haluava'</p>
+<button>BUY NOW</button>
+</div>
       </div>
      `;
       }
@@ -46,3 +58,35 @@ export class App implements appComponents {
     this.productList.addEvents();
   }
 }
+
+
+
+
+setInterval(() => {
+  const summaryPromo = document.querySelector('.summaryPromo') as HTMLInputElement
+const promoWrapper = document.querySelector('.promoWrapper') as HTMLElement
+const summaryTotal = document.querySelector('.summaryTotal') as HTMLElement
+const summaryPromoTotal = document.querySelector('.summaryPromoTotal') as HTMLElement
+
+  if(location.hash == "#cart" && summaryPromo.value == 'haluava' && cart.length !== 0){
+    promoWrapper.style.display = 'flex'
+    const promoButton = document.querySelector('.promoButton') as HTMLButtonElement
+    promoButton?.addEventListener('click', () => {
+      if(promoButton.innerHTML == 'ADD'){
+        promoButton.innerHTML = 'DROP'
+        summaryTotal.style.textDecoration = 'line-through'
+        summaryPromoTotal.style.display = 'flex'
+      } else{
+        promoButton.innerHTML = 'ADD'
+        summaryTotal.style.textDecoration = 'none'
+        summaryPromoTotal.style.display = 'none'
+      }
+      
+    })
+  }
+  else if (location.hash == "#cart" && summaryPromo.value !== 'haluava' && cart.length !== 0) {
+    promoWrapper.style.display = 'none'
+    summaryTotal.style.textDecoration = 'none'
+        summaryPromoTotal.style.display = 'none'
+  }
+}, 50);

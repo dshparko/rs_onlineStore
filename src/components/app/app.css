@@ -3,12 +3,18 @@
   border: 0.1rem rgb(161, 21, 21) solid;
 }
 
-.productWrapper {
+.productWrapper, .summary {
   border: 0.1rem rgb(161, 21, 21) solid;
 }
 
 .filterWrapper {
   flex-direction: column;
+}
+
+.cart{
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr;
 }
 
 .card-img-top {
@@ -23,3 +29,32 @@
   flex-direction: column;
   padding: 1rem;
 }
+
+.summaruProducts::before{
+  content: 'Products: ';
+}
+
+.summaryTotal::before{
+  content: 'Total: ';
+}
+
+.summaryTotal::after{
+  content: '$';
+}
+
+.summaryPromoTotal::before{
+  content: 'Total: ';
+}
+
+.summaryPromoTotal::after{
+  content: '$';
+}
+
+.summaryPromoTotal{
+  display: none;
+}
+
+.promoWrapper{
+  display: none;
+}
+
