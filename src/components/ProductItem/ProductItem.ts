@@ -3,10 +3,10 @@ import { Product } from "../../Interfaces/Product";
 import "./ProductItem.css";
 
 export let cart: string[] = [];
-const productCounter = document.querySelector(".productCounter");
+export const productCounter = document.querySelector(".productCounter");
 const headerLink = document.querySelector(".header__link");
 
-const total = document.querySelector(".total");
+export const total = document.querySelector(".total");
 
 let amount = 0;
 
@@ -68,10 +68,17 @@ export class ProductItem implements appComponents {
                   }')
                   const total = document.querySelector('.total')
                   const productCounter = document.querySelector('.productCounter')
+                  const summaruProducts = document.querySelector('.summaruProducts')
+                  const summaryTotal = document.querySelector('.summaryTotal')
+                  const summaryPromoTotal = document.querySelector('.summaryPromoTotal')
+                  
                   if(stockCounter.innerHTML < ${this.product.stock}){
                    stockCounter.innerHTML++
                    total.innerHTML= total.innerHTML -0 + ${this.product.price}
                    productCounter.innerHTML++
+                   summaruProducts.innerHTML++
+                   summaryTotal.innerHTML = total.innerHTML
+                   summaryPromoTotal.innerHTML = total.innerHTML * 1 / 100
                   }
             
                   ">+</button>
@@ -83,15 +90,25 @@ export class ProductItem implements appComponents {
                   }')
                   const total = document.querySelector('.total')
                   const productCounter = document.querySelector('.productCounter')
+                  const summaruProducts = document.querySelector('.summaruProducts')
+                  const summaryTotal = document.querySelector('.summaryTotal')
+                  const summaryPromoTotal = document.querySelector('.summaryPromoTotal')
+
                   if(stockCounter.innerHTML > 1){
                    stockCounter.innerHTML--
                    total.innerHTML -= ${this.product.price}
                    productCounter.innerHTML--
+                   summaruProducts.innerHTML--
+                   summaryTotal.innerHTML = total.innerHTML
+                   summaryPromoTotal.innerHTML = total.innerHTML * 1 / 100
                    
                   } else {
                     stockCounter.innerHTML--
                    total.innerHTML -= ${this.product.price}
                    productCounter.innerHTML--
+                   summaruProducts.innerHTML--
+                   summaryTotal.innerHTML = total.innerHTML
+                   summaryPromoTotal.innerHTML = total.innerHTML * 1 / 100
                     let element = document.querySelector('${
                       "." + this.product.id
                     }')
