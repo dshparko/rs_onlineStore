@@ -31,7 +31,12 @@ export class App implements appComponents {
 <button class='promoButton'>ADD</button>
 </div>
 <p>Promo for test: 'haluava'</p>
-<button>BUY NOW</button>
+<button onclick="
+const pupUpWrapper = document.querySelector('.pupUpWrapper')
+const pupUp = document.querySelector('.pupUp')
+pupUpWrapper.style.display = 'inline'
+pupUp.style.display = 'flex'
+">BUY NOW</button>
 </div>
       </div>
      `;

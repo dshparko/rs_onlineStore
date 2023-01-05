@@ -40,8 +40,43 @@
         </a>
         <span class="productCounter">0</span>
       </p>
+      <div class="pupUpWrapper"></div>
+      <div class="pupUpWrapper2">
+        <div class=" spinner-border text-danger pupUpSpinner" role="status">
+            <span class="visually-hidden">Загрузка...</span>
+          </div>
+      </div>
+      <div class="pupUp">
+        <p class="pupUpTitle">Personal details</p>
+        <input class="userNameInput" type="text" placeholder="Name">
+        <input class="userPhoneNumberInput" type="tel" placeholder="Phone number">
+        <input class="userAdress" type="text" placeholder="Delivery adress">
+        <input class="userEmail" type="email" placeholder="E-mail">
+        <p class="cardTitle">Credit card details</p>
+        <div class="cardWrapper">
+        <div class="cardNumber">
+            <img class="cardImg" src="https://play-lh.googleusercontent.com/HDhZc1410lGkN3OAhZ2lwWBz0ijuIfW_6NEAUw1jOaMVPpIYV1FTq4R4lWH6djvQ3Q" alt="card">
+            <input class="cardNumberInput" type="number" onkeypress="this.value=this.value.substring(0,15);" placeholder="Card number">
+        </div>
+        <div class="validCvv">
+        <div class="valid">
+            <p class="titleValid">VALID:</p>
+            <input class="cardValid" type="text" onkeypress="this.value=this.value.substring(0,4);" placeholder="Valid Thru">
+        </div>
+        <div class="cvv">
+            <p class="titleCvv">CVV:</p>
+            <input class="cardCvv" type="number" onkeypress="this.value=this.value.substring(0,2);" placeholder="Code">
+        </div>
+    </div>
+        </div>
+        <div class="confirm">
+            <a class="confirmButton">Confirm</a>
+             <p class="confirmError">Error. Check the entered data</p>
+        </div>
+    </div>
     </header>
     <main class="main"></main>
+    
     <footer class="footer">
       <p class="footerTitle">Online Store 2022</p>
     </footer>
