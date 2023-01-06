@@ -21,6 +21,10 @@ render() {
         <img src="${this.product.image}" alt="${this.product.name}" class="card-img-top" style="backgroung-size: auto;"/>
         <div class="card-body">
           <h5 class="card-title">${this.product.name}</h5>
+          <ul class="product__features">
+                <li class="product__property">Производитель: <span>${this.product.brand}</span></li>
+                <li class="product__property">Категория: <span>${this.product.category}</span></li>
+              </ul>
           <p class="card-text">${this.product.price}</p>
             <a href="#" class="btn_add btn btn-primary" id=${this.getId()}>BUY</a>
         </div>
