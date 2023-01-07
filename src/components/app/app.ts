@@ -8,11 +8,15 @@ import "./app.css";
 import { ProductList } from "../ProductsList";
 import { appComponents } from "../../Interfaces/appComponents";
 import { cart, productCounter, total } from "../ProductItem";
-
+import { productInfo } from '../HTML/ProductInfo/productInfo';
 export class App implements appComponents {
   private productList = new ProductList();
 
   render() {
+    if(location.hash == '#/info/product_1'){
+      return `
+      {productInfo}
+     `}
     if (location.hash == "#cart") {
       if (cart.length == 0) {
         return `<div>Cart is Empty</div>`;
@@ -41,7 +45,7 @@ pupUp.style.display = 'flex'
       </div>
      `;
       }
-    } else {
+    } if(location.hash == '') {
       return `
   
     <div class='filterWrapper'>
@@ -58,6 +62,11 @@ pupUp.style.display = 'flex'
     
     </div>`;
     }
+    else{
+      return `
+      <h1>NOT FOUND 404</h1>
+     `
+    }
   }
   addEvents() {
     this.productList.addEvents();
@@ -69,29 +78,29 @@ pupUp.style.display = 'flex'
 
 setInterval(() => {
   const summaryPromo = document.querySelector('.summaryPromo') as HTMLInputElement
-const promoWrapper = document.querySelector('.promoWrapper') as HTMLElement
-const summaryTotal = document.querySelector('.summaryTotal') as HTMLElement
-const summaryPromoTotal = document.querySelector('.summaryPromoTotal') as HTMLElement
+  const promoWrapper = document.querySelector('.promoWrapper') as HTMLElement
+  const summaryTotal = document.querySelector('.summaryTotal') as HTMLElement
+  const summaryPromoTotal = document.querySelector('.summaryPromoTotal') as HTMLElement
 
-  if(location.hash == "#cart" && summaryPromo.value == 'haluava' && cart.length !== 0){
+  if (location.hash == "#cart" && summaryPromo.value == 'haluava' && cart.length !== 0) {
     promoWrapper.style.display = 'flex'
     const promoButton = document.querySelector('.promoButton') as HTMLButtonElement
     promoButton?.addEventListener('click', () => {
-      if(promoButton.innerHTML == 'ADD'){
+      if (promoButton.innerHTML == 'ADD') {
         promoButton.innerHTML = 'DROP'
         summaryTotal.style.textDecoration = 'line-through'
         summaryPromoTotal.style.display = 'flex'
-      } else{
+      } else {
         promoButton.innerHTML = 'ADD'
         summaryTotal.style.textDecoration = 'none'
         summaryPromoTotal.style.display = 'none'
       }
-      
+
     })
   }
   else if (location.hash == "#cart" && summaryPromo.value !== 'haluava' && cart.length !== 0) {
     promoWrapper.style.display = 'none'
     summaryTotal.style.textDecoration = 'none'
-        summaryPromoTotal.style.display = 'none'
+    summaryPromoTotal.style.display = 'none'
   }
 }, 50);

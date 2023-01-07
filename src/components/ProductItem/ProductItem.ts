@@ -26,6 +26,7 @@ export class ProductItem implements appComponents {
           <h5 class="card-title">${this.product.name}</h5>
           <p class="card-text">${this.product.price}</p>
             <a href="#" class="btn_add btn btn-primary" id=${this.getId()}>BUY</a>
+            <a href='#/info/${this.getId()}' class="btn_info btn btn-primary" id='info/${this.getId()}'>info</a>
         </div>
       </div>
     `;
