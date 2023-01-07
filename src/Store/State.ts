@@ -1,17 +1,17 @@
-import { Product } from '../Interfaces/Product';
+import { Product } from '../Interfaces/Product'
 
 export interface CartProducts {
   [key: string]: {
-    amount: number;
-    product: Product;
-  };
+    amount: number
+    product: Product
+  }
 }
 
 export interface Cart {
-  products: CartProducts;
+  products: CartProducts
 }
 
 export interface State {
-  cart: Cart;
-  products: Product[];
+  cart: Cart
+  products: Product[]
 }

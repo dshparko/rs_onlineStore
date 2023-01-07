@@ -1,7 +1,7 @@
 import { Product } from "../Interfaces/Product";
 import { getProducts } from "../Data/Products";
 
-import { store } from '../Store/Store';
+import { store } from "../Store/Store";
 
 export class ProductsModel {
   static isExist = false;

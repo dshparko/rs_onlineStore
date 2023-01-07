@@ -14,13 +14,33 @@ import { cart } from '../ProductItem';
 export class App implements appComponents{
 
   private productList = new ProductList();
- 
-  render() {
-    if(location.hash == '#cart'){
-      return `
-      <div class='cart'>
-      <div class='cartProduct'>${cart.join('')}</div>
 
+  render() {
+    if (location.hash == "#cart") {
+      if (cart.length == 0) {
+        return `<div>Cart is Empty</div>`;
+      } else {
+        return `
+      <div class='cart'>
+      <div class='cartProduct'>${cart.join("")}</div>
+<div class='summary'>
+<p class='summaryTitel'>Summary</p>
+<p class='summaruProducts'>${productCounter?.innerHTML}</p>
+<p class='summaryTotal'>${total?.innerHTML}</p>
+<p class='summaryPromoTotal'>${Number(total?.innerHTML) * 1 / 100}</p>
+<input class='summaryPromo' type="text" placeholder='Enter promo code' value=''>
+<div class ='promoWrapper'>
+<p>haluava - 99%</p>
+<button class='promoButton'>ADD</button>
+</div>
+<p>Promo for test: 'haluava'</p>
+<button onclick="
+const pupUpWrapper = document.querySelector('.pupUpWrapper')
+const pupUp = document.querySelector('.pupUp')
+pupUpWrapper.style.display = 'inline'
+pupUp.style.display = 'flex'
+">BUY NOW</button>
+</div>
       </div>
      `
   
@@ -51,8 +71,39 @@ export class App implements appComponents{
    `
   }
   }
-  addEvents(){
-    this.productList.addEvents()
+  addEvents() {
+    this.productList.addEvents();
   }
-
 }
+
+
+
+
+setInterval(() => {
+  const summaryPromo = document.querySelector('.summaryPromo') as HTMLInputElement
+const promoWrapper = document.querySelector('.promoWrapper') as HTMLElement
+const summaryTotal = document.querySelector('.summaryTotal') as HTMLElement
+const summaryPromoTotal = document.querySelector('.summaryPromoTotal') as HTMLElement
+
+  if(location.hash == "#cart" && summaryPromo.value == 'haluava' && cart.length !== 0){
+    promoWrapper.style.display = 'flex'
+    const promoButton = document.querySelector('.promoButton') as HTMLButtonElement
+    promoButton?.addEventListener('click', () => {
+      if(promoButton.innerHTML == 'ADD'){
+        promoButton.innerHTML = 'DROP'
+        summaryTotal.style.textDecoration = 'line-through'
+        summaryPromoTotal.style.display = 'flex'
+      } else{
+        promoButton.innerHTML = 'ADD'
+        summaryTotal.style.textDecoration = 'none'
+        summaryPromoTotal.style.display = 'none'
+      }
+      
+    })
+  }
+  else if (location.hash == "#cart" && summaryPromo.value !== 'haluava' && cart.length !== 0) {
+    promoWrapper.style.display = 'none'
+    summaryTotal.style.textDecoration = 'none'
+        summaryPromoTotal.style.display = 'none'
+  }
+}, 50);
