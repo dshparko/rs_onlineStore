@@ -4,6 +4,8 @@ import { Product } from "../../Interfaces/Product";
 import './ProductItem.css'
 
 export let cart: String[] = []
+
+export let info: String[] = []
 const productCounter = document.querySelector('.productCounter')
 const total = document.querySelector('.total')
 let amount = 0
@@ -39,21 +41,12 @@ addEvents() {
   const buttonInfo = document.getElementById(`info/${this.getId()}`);
 
   if(buttonInfo == null){
-      throw new Error("!!!");
+      throw new Error("ERROR!");
     } 
     else{
       buttonInfo.addEventListener('click', () => {
-        if(buttonInfo.classList.contains('btn_delete')){
-          buttonInfo.classList.remove('btn_delete')
-          buttonInfo!.innerHTML = 'BUY'
-          cart = cart.filter(product => !product.match(this.product.image))
-          productCounter!.innerHTML = String(cart.length)
-            amount -= this.product.price
-            total!.innerHTML = String(amount)
-        }else{
-          buttonInfo.classList.add('btn_delete')
-          buttonInfo!.innerHTML = 'DROP FROM CART'
-            cart.push(`<div class="${this.product.name} card mb-3" style="max-width: 540px; display: flex;">
+       {
+        info.push(`<div class="${this.product.name} card mb-3" style="max-width: 540px; display: flex;">
             <div class="row g-0">
               <div class="col-md-4">
                 <img src="${this.product.image}" class="img-fluid rounded-start" style="max-width: 3rem;" alt="${this.product.name}">
@@ -62,14 +55,15 @@ addEvents() {
                 <div class="card-body">
                   <h5 class="card-title">${this.product.name}</h5>
                   <h6 class="card-title">$${this.product.price}</h6>
+                  <ul class="product__features">
+                <li class="product__property">Производитель: <span>${this.product.brand}</span></li>
+                <li class="product__property">Категория: <span>${this.product.category}</span></li>
+              </ul>
                 </div>
               </div>
             </div>
           </div>
         `)
-            productCounter!.innerHTML = String(cart.length)
-            amount += this.product.price
-            total!.innerHTML = String(amount)
         }
       })
     }

@@ -1,4 +1,5 @@
 import { brand } from '../HTML/Filter/Brand/brand';
+import { productInfo } from '../HTML/ProductInfo/productInfo';
 import { category } from '../HTML/Filter/Category/category';
 import { filterButtons } from '../HTML/Filter/FilterButtons/filterButtons';
 import { price } from '../HTML/Filter/Price/price';
@@ -11,6 +12,7 @@ import { cart } from '../ProductItem';
 
 
 export class App implements appComponents{
+
   private productList = new ProductList();
  
   render() {
@@ -22,9 +24,9 @@ export class App implements appComponents{
       </div>
      `
   
-    }if(location.hash == '#/info/${this.getId'){
+    }if(location.hash == `#/info/product_1`){
       return `
-      <h1>INFO</h1>
+      ${productInfo}
      `
   
     }  if(location.hash == '') {
