@@ -1,11 +1,9 @@
-export interface Product {
-  id: string;
-  name: string;
-  image: string;
-  price: number;
-  favorite: boolean;
-  stock: number;
-  description: string;
-  category: string;
-  discount: number;
+export interface Product{
+    brand: string;
+    category: string;
+    id: string;
+    name: string;
+    image: string;
+    price: number;
+    favorite: boolean;
 }

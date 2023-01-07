@@ -2,9 +2,12 @@ import { appComponents } from "../../Interfaces/appComponents";
 import { Product } from "../../Interfaces/Product";
 import "./ProductItem.css";
 
-export let cart: string[] = [];
-export const productCounter = document.querySelector(".productCounter");
-const headerLink = document.querySelector(".header__link");
+export let cart: String[] = []
+
+const productCounter = document.querySelector('.productCounter')
+const total = document.querySelector('.total')
+let amount = 0
+export class ProductItem implements appComponents{
 
 export const total = document.querySelector(".total");
 
@@ -24,16 +27,35 @@ export class ProductItem implements appComponents {
     }" class="card-img-top" style="backgroung-size: auto;"/>
         <div class="card-body">
           <h5 class="card-title">${this.product.name}</h5>
+          <ul class="product__features">
+                <li class="product__property">Производитель: <span>${this.product.brand}</span></li>
+                <li class="product__property">Категория: <span>${this.product.category}</span></li>
+              </ul>
           <p class="card-text">${this.product.price}</p>
             <a href="#" class="btn_add btn btn-primary" id=${this.getId()}>BUY</a>
+            <a href='#/info/${this.getId()}' class="btn_info btn btn-primary" id='info/${this.getId()}'>info</a>
+        
         </div>
       </div>
     `;
   }
 
-  addEvents() {
-    const buttonItem = document.getElementById(this.getId())!;
-    if (buttonItem == null && location.hash !== "#cart") {
+addEvents() {
+
+  const buttonInfo = document.getElementById(`info/${this.getId()}`);
+
+  if(buttonInfo == null){
+      throw new Error("ERROR!");
+    } 
+    else{
+      buttonInfo.addEventListener('click', () => {
+       {
+        }
+      })
+    }
+
+    const buttonItem = document.getElementById(this.getId())
+    if(buttonItem == null){
       throw new Error("!!!");
     } else if (location.hash !== "#cart") {
       buttonItem.addEventListener("click", () => {

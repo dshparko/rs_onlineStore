@@ -6,46 +6,51 @@ export const category = `<div class='categoryWrapper'>
 <div class='categoryItem'>
 
   <input type="checkbox">
-  <label>Jackets</label>
-
+  <label>Afternoon dress</label>
+</form>
 <p class='productAvailability'>(x/x)</p>
 </div>
 <div class='categoryItem'>
 
   <input type="checkbox">
-  <label>xxx</label>
-
-<p class='productAvailability'>(x/x)</p>
+  <label>Mourning wear</label>
+</form><p class='productAvailability'>(x/x)</p>
+</div>
+<div class='categoryItem'>
+<form>
+  <input type="checkbox">
+  <label>Sleep wear</label>
+</form><p class='productAvailability'>(x/x)</p>
 </div>
 <div class='categoryItem'>
 
   <input type="checkbox">
-  <label>xxx</label>
-<p class='productAvailability'>(x/x)</p>
+  <label>Shirts and blouses</label>
+</form><p class='productAvailability'>(x/x)</p>
 </div>
 <div class='categoryItem'>
 
   <input type="checkbox">
-  <label>xxx</label>
-<p class='productAvailability'>(x/x)</p>
+  <label>Knit wear</label>
+</form><p class='productAvailability'>(x/x)</p>
 </div>
 <div class='categoryItem'>
 
   <input type="checkbox">
-  <label>xxx</label>
-<p class='productAvailability'>(x/x)</p>
+  <label>Undergarments</label>
+</form><p class='productAvailability'>(x/x)</p>
 </div>
 <div class='categoryItem'>
 
   <input type="checkbox">
-  <label>xxx</label>
-<p class='productAvailability'>(x/x)</p>
+  <label>Evening wear</label>
+</form><p class='productAvailability'>(x/x)</p>
 </div>
 <div class='categoryItem'>
 
   <input type="checkbox">
-  <label>xxx</label>
-<p class='productAvailability'>(x/x)</p>
+  <label>Casual wear</label>
+</form><p class='productAvailability'>(x/x)</p>
 </div>
 </div>
 </div>`

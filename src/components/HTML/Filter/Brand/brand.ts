@@ -7,50 +7,50 @@ export const brand = `
     <div class='brandItem'>
     
   <input type="checkbox">
-  <label>xxx</label>
+  <label>Louis Vuitton</label>
+</form>    
+<p class='productAvailability'>(x/x)</p>
+    </div>
+    <div class='brandItem'>
+    
+  <input type="checkbox">
+  <label>GUCCI</label>
+</form>    
+<p class='productAvailability'>(x/x)</p>
+    </div>
+    <div class='brandItem'>
+    
+  <input type="checkbox">
+  <label>Chanel</label>
+</form>    
+<p class='productAvailability'>(x/x)</p>
+    </div>
+    <div class='brandItem'>
+    
+  <input type="checkbox">
+  <label>ZARA</label>
+</form>    
+<p class='productAvailability'>(x/x)</p>
+    </div>
+    <div class='brandItem'>
    
+  <input type="checkbox">
+  <label>H&M</label>
+</form>    
 <p class='productAvailability'>(x/x)</p>
     </div>
     <div class='brandItem'>
     
   <input type="checkbox">
-  <label>xxx</label>
-    
+  <label>Puma</label>
+</form>    
 <p class='productAvailability'>(x/x)</p>
     </div>
     <div class='brandItem'>
     
   <input type="checkbox">
-  <label>xxx</label>
-   
-<p class='productAvailability'>(x/x)</p>
-    </div>
-    <div class='brandItem'>
-    
-  <input type="checkbox">
-  <label>xxx</label>
-   
-<p class='productAvailability'>(x/x)</p>
-    </div>
-    <div class='brandItem'>
-   
-  <input type="checkbox">
-  <label>xxx</label>
-    
-<p class='productAvailability'>(x/x)</p>
-    </div>
-    <div class='brandItem'>
-    
-  <input type="checkbox">
-  <label>xxx</label>
-   
-<p class='productAvailability'>(x/x)</p>
-    </div>
-    <div class='brandItem'>
-    
-  <input type="checkbox">
-  <label>xxx</label>
-
+  <label>Victoria's Secret</label>
+</form>    
 <p class='productAvailability'>(x/x)</p>
     </div>
       </div>
