@@ -102,6 +102,24 @@ const PRODUCTS: Product[] = [
     name: 'product 10',
     price: 1499,
   },
+  {
+    favorite: false,
+    brand: 'H&M',
+    category:'Evening wear', 
+    id: 'product_11',
+    image: 'https://i.pinimg.com/564x/e5/ad/3f/e5ad3f5015f65a079ffd62eb25d58269.jpg',
+    name: 'product 11',
+    price: 1499,
+  },
+  {
+    favorite: false,
+    brand: 'H&M',
+    category:'Evening wear', 
+    id: 'product_12',
+    image: 'https://i.pinimg.com/736x/50/2a/cd/502acdc02db05dfd5e5c06dd7b8ff622.jpg',
+    name: 'product 12',
+    price: 1499,
+  },
 
 
 

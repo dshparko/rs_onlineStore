@@ -27,12 +27,53 @@ render() {
               </ul>
           <p class="card-text">${this.product.price}</p>
             <a href="#" class="btn_add btn btn-primary" id=${this.getId()}>BUY</a>
+            <a href='#/info/${this.getId()}' class="btn_info btn btn-primary" id='info/${this.getId()}'>info</a>
+        
         </div>
       </div>
     `;
   }
 
 addEvents() {
+
+  const buttonInfo = document.getElementById(`info/${this.getId()}`);
+
+  if(buttonInfo == null){
+      throw new Error("!!!");
+    } 
+    else{
+      buttonInfo.addEventListener('click', () => {
+        if(buttonInfo.classList.contains('btn_delete')){
+          buttonInfo.classList.remove('btn_delete')
+          buttonInfo!.innerHTML = 'BUY'
+          cart = cart.filter(product => !product.match(this.product.image))
+          productCounter!.innerHTML = String(cart.length)
+            amount -= this.product.price
+            total!.innerHTML = String(amount)
+        }else{
+          buttonInfo.classList.add('btn_delete')
+          buttonInfo!.innerHTML = 'DROP FROM CART'
+            cart.push(`<div class="${this.product.name} card mb-3" style="max-width: 540px; display: flex;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="${this.product.image}" class="img-fluid rounded-start" style="max-width: 3rem;" alt="${this.product.name}">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">${this.product.name}</h5>
+                  <h6 class="card-title">$${this.product.price}</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        `)
+            productCounter!.innerHTML = String(cart.length)
+            amount += this.product.price
+            total!.innerHTML = String(amount)
+        }
+      })
+    }
+
     const buttonItem = document.getElementById(this.getId())
     if(buttonItem == null){
       throw new Error("!!!");
