@@ -5,7 +5,6 @@ import './ProductItem.css'
 
 export let cart: String[] = []
 
-export let info: String[] = []
 const productCounter = document.querySelector('.productCounter')
 const total = document.querySelector('.total')
 let amount = 0
@@ -46,24 +45,6 @@ addEvents() {
     else{
       buttonInfo.addEventListener('click', () => {
        {
-        info.push(`<div class="${this.product.name} card mb-3" style="max-width: 540px; display: flex;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="${this.product.image}" class="img-fluid rounded-start" style="max-width: 3rem;" alt="${this.product.name}">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">${this.product.name}</h5>
-                  <h6 class="card-title">$${this.product.price}</h6>
-                  <ul class="product__features">
-                <li class="product__property">Производитель: <span>${this.product.brand}</span></li>
-                <li class="product__property">Категория: <span>${this.product.category}</span></li>
-              </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        `)
         }
       })
     }
