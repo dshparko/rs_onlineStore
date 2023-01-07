@@ -15,7 +15,7 @@ export class App implements appComponents {
   render() {
     if(location.hash == '#/info/product_1'){
       return `
-      {productInfo}
+      ${productInfo}
      `}
     if (location.hash == "#cart") {
       if (cart.length == 0) {
