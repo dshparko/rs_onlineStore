@@ -7,16 +7,12 @@ import { filterPanel } from "../HTML/Product/FilterPanel/filterPanel";
 import "./app.css";
 import { ProductList } from "../ProductsList";
 import { appComponents } from "../../Interfaces/appComponents";
-import { cart, productCounter, total } from "../ProductItem";
+import { cart, hash, productCounter, productWindow, total } from "../ProductItem";
 import { productInfo } from '../HTML/ProductInfo/productInfo';
 export class App implements appComponents {
   private productList = new ProductList();
 
   render() {
-    if(location.hash == '#/info/product_1'){
-      return `
-      ${productInfo}
-     `}
     if (location.hash == "#cart") {
       if (cart.length == 0) {
         return `<div>Cart is Empty</div>`;
@@ -61,7 +57,10 @@ pupUp.style.display = 'flex'
     ${this.productList.render()}
     
     </div>`;
-    }
+    } else if(location.hash == hash){
+      return `
+      ${productWindow}
+     `}
     else{
       return `
       <h1>NOT FOUND 404</h1>
