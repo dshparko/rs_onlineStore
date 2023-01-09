@@ -2,6 +2,6 @@
   content: "$";
 }
 
-.stock {
+.stock, .breadCrumbs {
   display: flex;
 }

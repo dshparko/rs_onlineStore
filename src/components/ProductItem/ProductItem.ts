@@ -43,7 +43,14 @@ export class ProductItem implements appComponents {
     } else {
       buttonProductWindow.addEventListener('click', () =>{
         hash = `#/info/${this.getId()}`
-        productWindow = `<div class=" card mb-3" style="max-width: 540px; display: flex;">
+        productWindow = `
+        <div class='breadCrumbs'>
+        <p>Store -></p>
+        <p>${this.product.category} -></p>
+        <p>${this.product.brand} -></p>
+        <p>${this.product.name}</p>
+        </div>
+        <div class=" card mb-3" style="max-width: 540px; display: flex;">
         <div class="row g-0">
           <div class="col-md-4">
             <img src='${this.product.image}' class="img-fluid rounded-start" style="max-width: 3rem;" alt="ing">
