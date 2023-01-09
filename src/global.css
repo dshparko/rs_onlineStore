@@ -121,7 +121,7 @@ html {
     border-radius: 0.5rem;
 }
 
-.cardNumberInput{
+#cardNumberInput{
   width: 23rem;
 }
 
