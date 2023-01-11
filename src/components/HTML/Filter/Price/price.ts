@@ -9,3 +9,4 @@ export const price = `<div class='priceWrapper'>
 </div>
 </div>
 </div>`
+
