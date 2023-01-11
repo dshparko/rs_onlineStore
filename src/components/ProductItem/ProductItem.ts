@@ -38,9 +38,9 @@ export class ProductItem implements appComponents {
   addEvents() {
 
     const buttonProductWindow = document.getElementById(`info/${this.getId()}`) as HTMLLinkElement
-    if (buttonProductWindow == null && location.hash !== "#cart") {
+    if (buttonProductWindow == null && location.hash !== "#cart" && location.hash !== hash) {
       throw new Error("!!!");
-    } else {
+    } else if(location.hash !== "#") {
       buttonProductWindow.addEventListener('click', () =>{
         hash = `#/info/${this.getId()}`
         productWindow = `

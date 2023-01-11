@@ -9,8 +9,11 @@ import { ProductList } from "../ProductsList";
 import { appComponents } from "../../Interfaces/appComponents";
 import { cart, hash, productCounter, productWindow, total } from "../ProductItem";
 import { productInfo } from '../HTML/ProductInfo/productInfo';
+
+
 export class App implements appComponents {
   private productList = new ProductList();
+
 
   render() {
     if (location.hash == "#cart") {
@@ -71,6 +74,7 @@ pupUp.style.display = 'flex'
     this.productList.addEvents();
   }
 }
+
 
 
 
