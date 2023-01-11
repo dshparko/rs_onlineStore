@@ -11,7 +11,6 @@ const PRODUCTS: Product[] = [
     price: 1113,
     stock: 12,
     description: "blablabla",
-    category: "dress",
     discount: 14,
   },
 
@@ -25,7 +24,6 @@ const PRODUCTS: Product[] = [
     price: 2122,
     stock: 10,
     description: "blablabla",
-    category: "dress",
     discount: 11,
   },
 
@@ -39,7 +37,6 @@ const PRODUCTS: Product[] = [
     price: 311,
     stock: 20,
     description: "blablabla",
-    category: "dress",
     discount: 12,
   },
 
@@ -53,7 +50,6 @@ const PRODUCTS: Product[] = [
     price: 399,
     stock: 24,
     description: "blablabla",
-    category: "dress",
     discount: 15,
   },
 
@@ -67,7 +63,6 @@ const PRODUCTS: Product[] = [
     price: 599,
     stock: 11,
     description: "blablabla",
-    category: "dress",
     discount: 9,
   },
 
@@ -81,7 +76,6 @@ const PRODUCTS: Product[] = [
     price: 1499,
     stock: 15,
     description: "blablabla",
-    category: "dress",
     discount: 17,
   },
 
@@ -93,6 +87,9 @@ const PRODUCTS: Product[] = [
     image: 'https://i.pinimg.com/564x/2d/9e/f9/2d9ef998bbcdd603c960ec83216292c1.jpg',
     name: 'product 7',
     price: 1499,
+    stock: 24,
+    description: "blablabla",
+    discount: 15,
   },
 
   {
@@ -103,6 +100,10 @@ const PRODUCTS: Product[] = [
     image: 'https://i.pinimg.com/564x/73/02/cb/7302cb80edf15de81dfc80ca0d9dc44a.jpg',
     name: 'product 8',
     price: 1499,
+    
+    stock: 24,
+    description: "blablabla",
+    discount: 15,
   },
 
 
@@ -114,6 +115,9 @@ const PRODUCTS: Product[] = [
     image: 'https://i.pinimg.com/564x/2d/a7/09/2da7091c76778b35acab7f20c5bf3094.jpg',
     name: 'product 9',
     price: 1499,
+    stock: 24,
+    description: "blablabla",
+    discount: 15,
   },
 
 
@@ -125,6 +129,9 @@ const PRODUCTS: Product[] = [
     image: 'https://i.pinimg.com/564x/aa/49/dc/aa49dca688e9a95bbc4251d919671296.jpg',
     name: 'product 10',
     price: 1499,
+    stock: 24,
+    description: "blablabla",
+    discount: 15,
   },
   {
     favorite: false,
@@ -134,6 +141,9 @@ const PRODUCTS: Product[] = [
     image: 'https://i.pinimg.com/564x/e5/ad/3f/e5ad3f5015f65a079ffd62eb25d58269.jpg',
     name: 'product 11',
     price: 1499,
+    stock: 24,
+    description: "blablabla",
+    discount: 15,
   },
   {
     favorite: false,
@@ -143,6 +153,9 @@ const PRODUCTS: Product[] = [
     image: 'https://i.pinimg.com/736x/50/2a/cd/502acdc02db05dfd5e5c06dd7b8ff622.jpg',
     name: 'product 12',
     price: 1499,
+    stock: 24,
+    description: "blablabla",
+    discount: 15,
   },
 
 

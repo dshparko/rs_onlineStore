@@ -1,6 +1,6 @@
 import './price.css'
 
-export let price = `<div class='priceWrapper'>
+export const price = `<div class='priceWrapper'>
 <p class='priceTitle'>Price</p>
 <div class="range_container">
 <div class="sliders_control">
@@ -9,3 +9,4 @@ export let price = `<div class='priceWrapper'>
 </div>
 </div>
 </div>`
+

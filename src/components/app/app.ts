@@ -1,19 +1,19 @@
-import { brand } from '../HTML/Filter/Brand/brand';
+import { brand } from "../HTML/Filter/Brand/brand";
+import { category } from "../HTML/Filter/Category/category";
+import { filterButtons } from "../HTML/Filter/FilterButtons/filterButtons";
+import { price } from "../HTML/Filter/Price/price";
+import { stock } from "../HTML/Filter/Stock/stock";
+import { filterPanel } from "../HTML/Product/FilterPanel/filterPanel";
+import "./app.css";
+import { ProductList } from "../ProductsList";
+import { appComponents } from "../../Interfaces/appComponents";
+import { cart, hash, productCounter, productWindow, total } from "../ProductItem";
 import { productInfo } from '../HTML/ProductInfo/productInfo';
-import { category } from '../HTML/Filter/Category/category';
-import { filterButtons } from '../HTML/Filter/FilterButtons/filterButtons';
-import { price } from '../HTML/Filter/Price/price';
-import { stock } from '../HTML/Filter/Stock/stock';
-import { filterPanel } from '../HTML/Product/FilterPanel/filterPanel';
-import './app.css';
-import { ProductList } from '../ProductsList';
-import { appComponents } from '../../Interfaces/appComponents';
-import { cart } from '../ProductItem';
 
 
-export class App implements appComponents{
-
+export class App implements appComponents {
   private productList = new ProductList();
+
 
   render() {
     if (location.hash == "#cart") {
@@ -42,16 +42,11 @@ pupUp.style.display = 'flex'
 ">BUY NOW</button>
 </div>
       </div>
-     `
-  
-    }if(location.hash == `#/info/product_1`){
+     `;
+      }
+    } if(location.hash == '') {
       return `
-      ${productInfo}
-     `
   
-    }  if(location.hash == '') {
-    return `
-    
     <div class='filterWrapper'>
       ${filterButtons}
       ${category}
@@ -64,12 +59,16 @@ pupUp.style.display = 'flex'
 
     ${this.productList.render()}
     
-    </div>`
-  } else{
-    return `
-    <h1>NOT FOUND 404</h1>
-   `
-  }
+    </div>`;
+    } else if(location.hash == hash){
+      return `
+      ${productWindow}
+     `}
+    else{
+      return `
+      <h1>NOT FOUND 404</h1>
+     `
+    }
   }
   addEvents() {
     this.productList.addEvents();
@@ -79,31 +78,32 @@ pupUp.style.display = 'flex'
 
 
 
+
 setInterval(() => {
   const summaryPromo = document.querySelector('.summaryPromo') as HTMLInputElement
-const promoWrapper = document.querySelector('.promoWrapper') as HTMLElement
-const summaryTotal = document.querySelector('.summaryTotal') as HTMLElement
-const summaryPromoTotal = document.querySelector('.summaryPromoTotal') as HTMLElement
+  const promoWrapper = document.querySelector('.promoWrapper') as HTMLElement
+  const summaryTotal = document.querySelector('.summaryTotal') as HTMLElement
+  const summaryPromoTotal = document.querySelector('.summaryPromoTotal') as HTMLElement
 
-  if(location.hash == "#cart" && summaryPromo.value == 'haluava' && cart.length !== 0){
+  if (location.hash == "#cart" && summaryPromo.value == 'haluava' && cart.length !== 0) {
     promoWrapper.style.display = 'flex'
     const promoButton = document.querySelector('.promoButton') as HTMLButtonElement
     promoButton?.addEventListener('click', () => {
-      if(promoButton.innerHTML == 'ADD'){
+      if (promoButton.innerHTML == 'ADD') {
         promoButton.innerHTML = 'DROP'
         summaryTotal.style.textDecoration = 'line-through'
         summaryPromoTotal.style.display = 'flex'
-      } else{
+      } else {
         promoButton.innerHTML = 'ADD'
         summaryTotal.style.textDecoration = 'none'
         summaryPromoTotal.style.display = 'none'
       }
-      
+
     })
   }
   else if (location.hash == "#cart" && summaryPromo.value !== 'haluava' && cart.length !== 0) {
     promoWrapper.style.display = 'none'
     summaryTotal.style.textDecoration = 'none'
-        summaryPromoTotal.style.display = 'none'
+    summaryPromoTotal.style.display = 'none'
   }
 }, 50);
